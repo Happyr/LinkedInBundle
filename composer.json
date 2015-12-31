@@ -1,0 +1,25 @@
+{
+    "name": "happyr/linkedin-bundle",
+    "type": "symfony-bundle",
+    "description": "A symfony bundle for happyr/linkedin-api-client",
+    "keywords": [],
+    "homepage": "http://developer.happyr.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tobias Nyholm",
+            "email": "tobias@happyr.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "symfony/symfony":"^2.3|^3.0",
+        "happyr/linkedin-api-client": "^0.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Happyr\\LinkedInBundle\\": ""
+        }
+    }
+}
+

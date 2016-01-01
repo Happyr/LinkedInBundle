@@ -7,6 +7,9 @@ Usage:
 happyr_linkedin:
   app_id: 'xxx'
   app_secret: 'yyy'
+  request_format: 'json' # Default
+  response_format: 'array' # Default
+  http_client: 'httplug.client' # Service ID for an object implementing Http\Client\HttpClient 
 ```
 
 ```php

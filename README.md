@@ -10,6 +10,7 @@ happyr_linkedin:
   request_format: 'json' # Default
   response_format: 'array' # Default
   http_client: 'httplug.client' # Service ID for an object implementing Http\Client\HttpClient 
+  http_message_factory: 'httplug.message_factory' # Service ID for an object implementing Http\Message\MessageFactory
 ```
 
 ```php

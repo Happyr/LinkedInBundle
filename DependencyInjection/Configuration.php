@@ -19,7 +19,8 @@ class Configuration implements ConfigurationInterface
         $root = $treeBuilder->root('happyr_linkedin');
 
         $root->children()
-            ->scalarNode('http_client')->info('A service id for a Httplug adapter')->end()
+            ->scalarNode('http_client')->defaultValue('httplug.client')->info('A service id for a Httplug adapter')->end()
+            ->scalarNode('http_message_factory')->defaultValue('httplug.message_factory')->info('A service id for a Httplug adapter')->end()
             ->scalarNode('app_id')->isRequired()->end()
             ->scalarNode('app_secret')->isRequired()->end()
             ->scalarNode('request_format')->cannotBeEmpty()->defaultValue('json')->end()

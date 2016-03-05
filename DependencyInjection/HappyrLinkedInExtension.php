@@ -33,6 +33,11 @@ class HappyrLinkedInExtension extends Extension
             $def = $container->getDefinition('happyr.linkedin');
             $def->addMethodCall('setHttpClient', [new Reference($config['http_client'])]);
         }
+
+        if (!empty($config['http_message_factory'])) {
+            $def = $container->getDefinition('happyr.linkedin');
+            $def->addMethodCall('setHttpMessageFactory', [new Reference($config['http_message_factory'])]);
+        }
     }
 
     public function getAlias()

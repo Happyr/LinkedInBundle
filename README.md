@@ -1,7 +1,19 @@
 # Happyr LinkedIn bundle
 
 This is a very small bundle that registers a service for the [LinkedIn client](https://github.com/Happyr/LinkedIn-API-client).
-Usage: 
+
+### Installation
+
+See the installation note at the [LinkedIn client (installation)](https://github.com/Happyr/LinkedIn-API-client#installation).
+
+For a simple installation of all components, you can run this Composer command: ([why?](http://php-http.readthedocs.io/en/latest/httplug/users.html))
+```bash
+composer require php-http/curl-client guzzlehttp/psr7 php-http/message happyr/linkedin-bundle
+```
+
+You will get some great debugging and easier set up if you install the [HTTPlugBundle](https://github.com/php-http/HttplugBundle).
+
+### Usage 
 
 ```yaml
 happyr_linkedin:

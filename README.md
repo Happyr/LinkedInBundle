@@ -1,6 +1,28 @@
 # Happyr LinkedIn bundle
 
-This is a very small bundle that registers a service for the [LinkedIn client](https://github.com/Happyr/LinkedIn-API-client).
+This is a very small bundle that registers a service for the [LinkedIn client](https://github.com/Happyr/LinkedIn-API-client).  
+
+Enable the bundle, by adding the following line in the app/AppKernel.php file of your project:
+```php
+// app/AppKernel.php
+
+class AppKernel extends Kernel
+{
+    public function registerBundles()
+    {
+        $bundles = array(
+            // ...
+
+            new \Happyr\LinkedInBundle\HappyrLinkedInBundle(),
+        );
+
+        // ...
+    }
+
+    // ...
+}
+```
+
 Usage: 
 
 ```yaml

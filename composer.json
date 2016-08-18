@@ -12,9 +12,9 @@
         }
     ],
     "require": {
-        "php": "^5.5|^7.0",
-        "symfony/symfony":"^2.3|^3.0",
-        "happyr/linkedin-api-client": "^0.7",
+        "php": "^5.5 || ^7.0",
+        "symfony/symfony":"^2.3 || ^3.0",
+        "happyr/linkedin-api-client": "^1.0",
         "php-http/httplug-bundle": "^1.0"
     },
     "autoload": {

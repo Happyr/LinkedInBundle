@@ -13,24 +13,19 @@ composer require php-http/curl-client guzzlehttp/psr7 php-http/message happyr/li
 
 You will get some great debugging and easier set up if you install the [HTTPlugBundle](https://github.com/php-http/HttplugBundle).
 
-After the installation of the HttplugBundle, you have to enable it:
+After the installation of the HttplugBundle, you have to enable it and the LinkedinBundle:
 ```php
 // app/AppKernel.php
-
 class AppKernel extends Kernel
 {
     public function registerBundles()
     {
         $bundles = array(
             // ...
-
             new Http\HttplugBundle\HttplugBundle(),
+            new Happyr\LinkedInBundle\HappyrLinkedInBundle()
         );
-
-        // ...
     }
-
-    // ...
 }
 ```
 

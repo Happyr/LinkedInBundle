@@ -2,18 +2,36 @@
 
 This is a very small bundle that registers a service for the [LinkedIn client](https://github.com/Happyr/LinkedIn-API-client).
 
-### Installation
+### Easy installation
 
-See the installation note at the [LinkedIn client (installation)](https://github.com/Happyr/LinkedIn-API-client#installation).
-
-For a simple installation of all components, you can run this Composer command: ([why?](http://php-http.readthedocs.io/en/latest/httplug/users.html))
+For an easy installation of all components, you can run this Composer command: 
 ```bash
 composer require php-http/curl-client guzzlehttp/psr7 php-http/message happyr/linkedin-bundle
 ```
 
-You will get some great debugging and easier set up if you install the [HTTPlugBundle](https://github.com/php-http/HttplugBundle).
+Then add LinkedInBundle to your AppKernel.
+```php
+// app/AppKernel.php
+class AppKernel extends Kernel
+{
+    public function registerBundles()
+    {
+        $bundles = array(
+            // ...
+            new Happyr\LinkedInBundle\HappyrLinkedInBundle()
+        );
+    }
+}
+```
+#### Optional
 
-After the installation of the HttplugBundle, you have to enable it and the LinkedinBundle:
+If you want some great debugging and an easier set up you may install the [HTTPlugBundle](https://github.com/php-http/HttplugBundle).
+
+```bash
+composer require php-http/httplug-bundle
+```
+
+Then make sure you have both HttplugBundle and LinkedInBundle to your AppKernel.
 ```php
 // app/AppKernel.php
 class AppKernel extends Kernel
@@ -28,6 +46,10 @@ class AppKernel extends Kernel
     }
 }
 ```
+
+#### Why installing so many packages?
+See the installation note at the [LinkedIn client (installation)](https://github.com/Happyr/LinkedIn-API-client#installation) or
+the HTTPlug [documentation](http://php-http.readthedocs.io/en/latest/httplug/users.html).
 
 ### Usage 
 

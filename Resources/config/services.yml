@@ -1,6 +1,8 @@
 
 services:
   Happyr\LinkedIn\LinkedIn:
+    alias: happyr.linkedin
+    public: false
     arguments:
       - '%happyr.linkedin.app_id%'
       - '%happyr.linkedin.app_secret%'

@@ -2,56 +2,41 @@
 
 This is a very small bundle that registers a service for the [LinkedIn client](https://github.com/Happyr/LinkedIn-API-client).
 
-### Easy installation
+### Installation
 
-For an easy installation of all components, you can run this Composer command: 
+See the installation note at the [LinkedIn client (installation)](https://github.com/Happyr/LinkedIn-API-client#installation).
+
+For a simple installation of all components, you can run this Composer command: ([why?](http://php-http.readthedocs.io/en/latest/httplug/users.html))
 ```bash
 composer require php-http/curl-client guzzlehttp/psr7 php-http/message happyr/linkedin-bundle
 ```
 
-Then add LinkedInBundle to your AppKernel.
+You will get some great debugging and easier set up if you install the [HTTPlugBundle](https://github.com/php-http/HttplugBundle).
+
+After the installation of the HttplugBundle, you have to enable it:
 ```php
 // app/AppKernel.php
+
 class AppKernel extends Kernel
 {
     public function registerBundles()
     {
         $bundles = array(
             // ...
-            new Happyr\LinkedInBundle\HappyrLinkedInBundle()
-        );
-    }
-}
-```
-#### Optional
 
-If you want some great debugging and an easier set up you may install the [HTTPlugBundle](https://github.com/php-http/HttplugBundle).
-
-```bash
-composer require php-http/httplug-bundle
-```
-
-Then make sure you have both HttplugBundle and LinkedInBundle to your AppKernel.
-```php
-// app/AppKernel.php
-class AppKernel extends Kernel
-{
-    public function registerBundles()
-    {
-        $bundles = array(
-            // ...
             new Http\HttplugBundle\HttplugBundle(),
-            new Happyr\LinkedInBundle\HappyrLinkedInBundle()
         );
+
+        // ...
     }
+
+    // ...
 }
 ```
-
-#### Why installing so many packages?
-See the installation note at the [LinkedIn client (installation)](https://github.com/Happyr/LinkedIn-API-client#installation) or
-the HTTPlug [documentation](http://php-http.readthedocs.io/en/latest/httplug/users.html).
 
 ### Usage 
+
+**services.yml**
 
 ```yaml
 happyr_linkedin:
@@ -63,9 +48,28 @@ happyr_linkedin:
   http_message_factory: 'httplug.message_factory' # Service ID for an object implementing Http\Message\MessageFactory
 ```
 
+**Your class**
+
 ```php
-$linkedin = $this->get('happyr.linkedin');
-$user = $linkedin->get('v1/people/~:(firstName,lastName)');
+use Happyr\LinkedIn\LinkedInInterface;
+```
+
+```php
+/**
+ * @var \Happyr\LinkedIn\LinkedInInterface
+ */
+private $linkedInService;
+```
+
+```php
+public function __construct(LinkedInInterface $linkedInService)
+{
+    $this->linkedInService = $linkedInService;
+}
+```
+
+```php
+$user = $this->linkedInService->get('v1/people/~:(firstName,lastName)');
 ```
 
 For more info look at the libraries repository: https://github.com/Happyr/LinkedIn-API-client

@@ -53,6 +53,8 @@ the HTTPlug [documentation](http://php-http.readthedocs.io/en/latest/httplug/use
 
 ### Usage 
 
+**services.yml**
+
 ```yaml
 happyr_linkedin:
   app_id: 'xxx'
@@ -63,9 +65,28 @@ happyr_linkedin:
   http_message_factory: 'httplug.message_factory' # Service ID for an object implementing Http\Message\MessageFactory
 ```
 
+**Your class**
+
 ```php
-$linkedin = $this->get('happyr.linkedin');
-$user = $linkedin->get('v1/people/~:(firstName,lastName)');
+use Happyr\LinkedIn\LinkedInInterface;
+```
+
+```php
+/**
+ * @var \Happyr\LinkedIn\LinkedInInterface
+ */
+private $linkedInService;
+```
+
+```php
+public function __construct(LinkedInInterface $linkedInService)
+{
+    $this->linkedInService = $linkedInService;
+}
+```
+
+```php
+$user = $this->linkedInService->get('v1/people/~:(firstName,lastName)');
 ```
 
 For more info look at the libraries repository: https://github.com/Happyr/LinkedIn-API-client

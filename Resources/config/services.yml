@@ -3,7 +3,7 @@ services:
   happyr.linkedin:
     class: Happyr\LinkedIn\LinkedIn
     arguments:
-      - %happyr.linkedin.app_id%
-      - %happyr.linkedin.app_secret%
-      - %happyr.linkedin.request_format%
-      - %happyr.linkedin.response_format%
+      - "%happyr.linkedin.app_id%"
+      - "%happyr.linkedin.app_secret%"
+      - "%happyr.linkedin.request_format%"
+      - "%happyr.linkedin.response_format%"

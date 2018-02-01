@@ -13,9 +13,15 @@
     ],
     "require": {
         "php": "^5.5 || ^7.0",
-        "symfony/symfony":"^2.3 || ^3.0",
+        "symfony/dependency-injection":"^2.3 || ^3.0 || ^4.0",
+        "symfony/http-kernel":"^2.3 || ^3.0 || ^4.0",
         "happyr/linkedin-api-client": "^1.0",
         "php-http/httplug-bundle": "^1.0"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^3.4 || ^4.0",
+        "php-http/curl-client": "^1.7",
+        "nyholm/symfony-bundle-test": "^1.3"
     },
     "autoload": {
         "psr-4": {
@@ -23,4 +29,3 @@
         }
     }
 }
-

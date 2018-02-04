@@ -14,7 +14,6 @@
     "require": {
         "php": "^5.5 || ^7.0",
         "happyr/linkedin-api-client": "^1.0",
-        "php-http/httplug-bundle": "^1.0",
         "symfony/dependency-injection": "^2.3 || ^3.0 || ^4.0",
         "symfony/http-kernel": "^2.3 || ^3.0 || ^4.0"
     },
@@ -22,9 +21,14 @@
         "guzzlehttp/psr7": "^1.4",
         "nyholm/symfony-bundle-test": "^1.3.1",
         "php-http/curl-client": "^1.7",
+        "php-http/httplug-bundle": "^1.8",
         "php-http/message": "^1.6",
         "symfony/phpunit-bridge": "^3.4 || ^4.0"
     },
+    "suggest": {
+        "php-http/httplug-bundle": "For easier configure your HTTP clients"
+    },
+
     "autoload": {
         "psr-4": {
             "Happyr\\LinkedInBundle\\": ""

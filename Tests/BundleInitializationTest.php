@@ -4,6 +4,7 @@ namespace Happyr\LinkedInBundle\Tests;
 
 use Happyr\LinkedIn\LinkedIn;
 use Happyr\LinkedInBundle\HappyrLinkedInBundle;
+use Http\HttplugBundle\HttplugBundle;
 use Nyholm\BundleTest\BaseBundleTestCase;
 use Nyholm\BundleTest\CompilerPass\PublicServicePass;
 
@@ -23,6 +24,11 @@ class BundleInitializationTest extends BaseBundleTestCase
 
     public function testInitBundle()
     {
+        $kernel = $this->createKernel();
+        $kernel->addConfigFile(__DIR__.'/config.yml');
+        $kernel->addBundle(HttplugBundle::class);
+
+
         // Boot the kernel.
         $this->bootKernel();
 

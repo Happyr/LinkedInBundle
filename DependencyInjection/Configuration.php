@@ -15,8 +15,8 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $root = $treeBuilder->root('happyr_linkedin');
+        $treeBuilder = new TreeBuilder('happyr_linkedin');
+        $root = $treeBuilder->getRootNode();
 
         $root->children()
             ->scalarNode('http_client')->defaultValue('httplug.client')->info('A service id for a Httplug adapter')->end()
